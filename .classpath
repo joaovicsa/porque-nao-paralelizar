@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="src/" kind="src" path="CadastroClient"/>
+	<classpathentry kind="src" path="CadastroClient/src"/>
+	<classpathentry kind="src" path="CadastroServer/src"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/adaptive"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/alwaysencrypted"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/azureactivedirectoryauthentication"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/connections"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/constrained"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/dataclassification"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/datatypes"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/resultsets"/>
+	<classpathentry kind="src" path="sqljdbc_12.6/ptb/samples/sparse"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jars/mssql-jdbc-12.6.1.jre11.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jars/mssql-jdbc-12.6.1.jre11-javadoc.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jars/mssql-jdbc-12.6.1.jre11-sources.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jars/mssql-jdbc-12.6.1.jre8.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jars/mssql-jdbc-12.6.1.jre8-javadoc.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jars/mssql-jdbc-12.6.1.jre8-sources.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/javax.annotation-api-1.3.2.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/mssql-jdbc-12.6.0.jre11.jar"/>
+	<classpathentry kind="lib" path="sqljdbc_12.6/ptb/validation-api-2.0.1.Final.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
