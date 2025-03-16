@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model;
+package src.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -25,7 +25,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Usuario")
 @NamedQueries({
-    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")})
+        @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u") })
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -97,12 +97,12 @@ public class Usuario implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Usuario)) {
             return false;
         }
         Usuario other = (Usuario) object;
-        if ((this.idUsuario == null && other.idUsuario != null) || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario))) {
+        if ((this.idUsuario == null && other.idUsuario != null)
+                || (this.idUsuario != null && !this.idUsuario.equals(other.idUsuario))) {
             return false;
         }
         return true;

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model;
+package src.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -26,7 +26,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Produto")
 @NamedQueries({
-    @NamedQuery(name = "Produto.findAll", query = "SELECT p FROM Produto p")})
+        @NamedQuery(name = "Produto.findAll", query = "SELECT p FROM Produto p") })
 public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,7 +41,6 @@ public class Produto implements Serializable {
     @Basic(optional = false)
     @Column(name = "quantidade")
     private int quantidade;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
     @Column(name = "precoVenda")
     private BigDecimal precoVenda;
@@ -111,12 +110,12 @@ public class Produto implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Produto)) {
             return false;
         }
         Produto other = (Produto) object;
-        if ((this.idProduto == null && other.idProduto != null) || (this.idProduto != null && !this.idProduto.equals(other.idProduto))) {
+        if ((this.idProduto == null && other.idProduto != null)
+                || (this.idProduto != null && !this.idProduto.equals(other.idProduto))) {
             return false;
         }
         return true;
@@ -125,6 +124,11 @@ public class Produto implements Serializable {
     @Override
     public String toString() {
         return "model.Produto[ idProduto=" + idProduto + " ]";
+    }
+
+    public String getValorUnitario() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

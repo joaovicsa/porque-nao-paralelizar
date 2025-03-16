@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package model;
+package src.model;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -18,37 +14,49 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
+ * Classe Movimento que representa uma transação de entrada ou saída de produtos.
+ */
+
+/**
  *
  * @author _joao
  */
+
 @Entity
 @Table(name = "Movimento")
 @NamedQueries({
-    @NamedQuery(name = "Movimento.findAll", query = "SELECT m FROM Movimento m")})
+        @NamedQuery(name = "Movimento.findAll", query = "SELECT m FROM Movimento m")
+})
 public class Movimento implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idMovimento")
     private Integer idMovimento;
+
     @Basic(optional = false)
     @Column(name = "quantidade")
     private int quantidade;
+
     @Basic(optional = false)
     @Column(name = "tipo")
     private Character tipo;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+
     @Basic(optional = false)
     @Column(name = "valorUnitario")
     private Float valorUnitario;
+
     @JoinColumn(name = "idPessoa", referencedColumnName = "idPessoa")
     @ManyToOne(optional = false)
     private Pessoa pessoa;
+
     @JoinColumn(name = "idProduto", referencedColumnName = "idProduto")
     @ManyToOne(optional = false)
     private Produto produto;
+
     @JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario")
     @ManyToOne(optional = false)
     private Usuario usuario;
@@ -56,12 +64,7 @@ public class Movimento implements Serializable {
     public Movimento() {
     }
 
-    public Movimento(Integer idMovimento) {
-        this.idMovimento = idMovimento;
-    }
-
-    public Movimento(Integer idMovimento, int quantidade, Character tipo, Float valorUnitario) {
-        this.idMovimento = idMovimento;
+    public Movimento(int quantidade, Character tipo, Float valorUnitario) {
         this.quantidade = quantidade;
         this.tipo = tipo;
         this.valorUnitario = valorUnitario;
@@ -132,15 +135,12 @@ public class Movimento implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Movimento)) {
             return false;
         }
         Movimento other = (Movimento) object;
-        if ((this.idMovimento == null && other.idMovimento != null) || (this.idMovimento != null && !this.idMovimento.equals(other.idMovimento))) {
-            return false;
-        }
-        return true;
+        return !((this.idMovimento == null && other.idMovimento != null)
+                || (this.idMovimento != null && !this.idMovimento.equals(other.idMovimento)));
     }
 
     @Override
